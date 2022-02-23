@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="@drawable/background"
+    tools:context=".Features.MainGame">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/introduction"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/playername"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:padding="2dp"
+        android:textColor="@color/black"
+        android:text="Player: "
+        android:layout_alignParentStart="true"/>
+
+    <ImageView
+        android:id="@+id/heart1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:background="@drawable/heart"
+        android:layout_toLeftOf="@id/heart2"/>
+
+    <ImageView
+        android:id="@+id/heart2"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:background="@drawable/heart"
+        android:layout_toLeftOf="@id/heart3"/>
+
+    <ImageView
+        android:id="@+id/heart3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:background="@drawable/heart"
+        android:layout_toLeftOf="@id/heart4"/>
+    <ImageView
+        android:id="@+id/heart4"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:background="@drawable/heart"
+        android:layout_toLeftOf="@id/heart5"/>
+    <ImageView
+        android:id="@+id/heart5"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:background="@drawable/heart"
+        android:layout_alignParentEnd="true"/>
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        android:id="@+id/linearLayout">
+
+        <net.gotev.speech.ui.SpeechProgressView
+            android:id="@+id/progress"
+            android:layout_width="120dp"
+            android:layout_height="150dp"/>
+
+    </LinearLayout>
+<androidx.cardview.widget.CardView
+    android:id="@+id/button1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="50dp"
+    android:layout_marginBottom="20dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:backgroundTint="#ff3232"
+    >
+
+
+    <ImageButton
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:id="@+id/button"
+       android:layout_margin="10dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/ic_mic" />
+
+
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="500dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="50dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:background="@color/teal_700"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SCORE: 0"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:layout_marginTop="-30dp"
+             android:layout_marginBottom="20dp"
+                android:textColor="@color/black"
+                android:background="@drawable/rounded_rect_red1"
+                android:layout_centerHorizontal="true" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imageview1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/teal_700"
+                android:layout_below="@id/score"
+                >
+           <ImageView
+               android:id="@+id/imageview"
+               android:layout_width="300dp"
+               android:background="@drawable/apple"
+               android:layout_centerHorizontal="true"
+               android:layout_height="300dp"/>
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/speak"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="bottom"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/ic_mic"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/imageview"/>
+                    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_below="@id/imageview1"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:id="@+id/textToSpeech"
+        android:text="APPLE"
+        android:textAllCaps="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_rect_red"
+        android:textColor="@color/red"
+        android:fontFamily="sans-serif"
+        android:textSize="40dp" />
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/skip"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+     android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:drawableTint="@color/red"
+        android:drawableStart="@drawable/ic_skip"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/customborder_line" />
+</RelativeLayout>

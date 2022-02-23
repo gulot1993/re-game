@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Features.MainGame">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="20dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="500dp"
+                android:layout_height="100dp"
+                android:id="@+id/icon"
+                android:src="@drawable/congrats"
+                android:layout_centerHorizontal="true">
+            </ImageView>
+
+            <RelativeLayout
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/icon"
+                android:id="@+id/hearts"
+                android:layout_centerHorizontal="true">
+                <ImageView
+                    android:id="@+id/heart1"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:padding="5dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/thropy"
+                android:layout_centerHorizontal="true"/>
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/texticon"
+                android:textSize="16sp"
+                android:text="SCORE : 0"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@id/hearts">
+
+            </TextView>
+            <TextView
+                android:id="@+id/end"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/texticon"
+                android:text="OK"
+                android:textAlignment="center"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/customborder_name">
+
+            </TextView>
+
+
+
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
