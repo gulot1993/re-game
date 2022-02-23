@@ -17,6 +17,7 @@
         <activity android:name=".Features.Story"/>
         <activity android:name=".Features.Leaderboard.GameListActivity"/>
         <activity android:name=".Features.signup.SignUpActivity" />
+        <activity android:name=".Features.signin.SignInActivity" />
         <activity android:name=".Features.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

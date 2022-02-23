@@ -33,9 +33,11 @@
     <string name="create_button">Create</string>
     <string name="all_delete">All Delete</string>
     <string name="edit_button_description">Edit game information</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="sign_up">Sign up</string>
     <string name="id_number">ID number</string>
     <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="login">Login</string>
 
     <!--error messages-->
     <string name="name_error">Invalid name</string>
