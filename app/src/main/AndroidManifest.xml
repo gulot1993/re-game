@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.project.regame">
-    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -16,9 +17,9 @@
         <activity android:name=".Features.Video"/>
         <activity android:name=".Features.Story"/>
         <activity android:name=".Features.Leaderboard.GameListActivity"/>
-        <activity android:name=".Features.signup.SignUpActivity" />
-        <activity android:name=".Features.signin.SignInActivity" />
-        <activity android:name=".Features.MenuActivity">
+<!--        <activity android:name=".Features.signup.SignUpActivity" />-->
+<!--        <activity android:name=".Features.signin.SignInActivity" />-->
+        <activity android:name=".Features.signin.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
