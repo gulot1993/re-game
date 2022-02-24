@@ -8,12 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.project.regame.Features.Leaderboard.GameListActivity;
+import com.project.regame.Features.signin.SignInActivity;
 import com.project.regame.R;
 import com.project.regame.Util.Session;
 
 
 public class MenuActivity extends AppCompatActivity {
-    AppCompatButton button, button1, button3,button4, button5;
+    AppCompatButton button, button1, button3,button4, button5, logout;
     Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class MenuActivity extends AppCompatActivity {
         button4 = findViewById(R.id.video);
         button5= findViewById(R.id.leaderboard);
         button3 = findViewById(R.id.story);
+        logout = findViewById(R.id.logout);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +70,15 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, GameListActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuActivity.this, SignInActivity.class);
+                startActivity(intent);
+                finishAffinity();
             }
         });
 

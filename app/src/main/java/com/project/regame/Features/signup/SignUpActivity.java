@@ -1,5 +1,6 @@
 package com.project.regame.Features.signup;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,13 +14,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.project.regame.Features.MenuActivity;
 import com.project.regame.Features.model.User;
+import com.project.regame.Features.signin.SignInActivity;
 import com.project.regame.R;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -27,6 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
     TextInputEditText etName, etIdNumber, etEmail, etPassword;
     private FirebaseAuth auth;
     private FirebaseFirestore db;
+    CircularProgressIndicator progressIndicator;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
         etIdNumber = findViewById(R.id.etIdNumber);
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
+        progressIndicator = findViewById(R.id.progressCircular);
     }
 
     private void setupListeners() {
@@ -77,19 +83,21 @@ public class SignUpActivity extends AppCompatActivity {
         // for our Firebase Firetore database.
         CollectionReference users = db.collection("User");
         User user = new User(name, idNumber, email, password);
-
+        progressIndicator.setVisibility(View.VISIBLE);
         users.add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
                 Toast.makeText(SignUpActivity.this, "Your Course has been added to Firebase Firestore", Toast.LENGTH_SHORT).show();
-                Log.d("TEST","Gwapo ko ");
                 auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(SignUpActivity.this, "Succcess", Toast.LENGTH_SHORT).show();
+                        progressIndicator.setVisibility(View.GONE);
+                        Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                        startActivity(intent);
                     }
                 });
             }
+
         });
 
     }

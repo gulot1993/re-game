@@ -13,11 +13,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textview.MaterialTextView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.project.regame.Features.MainGame;
+import com.project.regame.Features.MenuActivity;
 import com.project.regame.Features.signup.SignUpActivity;
 import com.project.regame.R;
 
@@ -29,6 +32,7 @@ public class SignInActivity extends AppCompatActivity {
     TextView register;
     private FirebaseAuth auth;
     private FirebaseFirestore db;
+    CircularProgressIndicator progressIndicator;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,12 +48,14 @@ public class SignInActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         register = findViewById(R.id.register_text);
+        progressIndicator = findViewById(R.id.progressCircular);
     }
 
     private void setupListeners() {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressIndicator.setVisibility(View.VISIBLE);
                 String email = etEmail.getText().toString().trim();
                 String password = etPassword.getText().toString();
                 Boolean hasValidCredentials = validateCredentials(email, password);
@@ -59,12 +65,19 @@ public class SignInActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(SignInActivity.this, "Login bay", Toast.LENGTH_LONG).show();
+                                progressIndicator.setVisibility(View.GONE);
+                                Intent intent = new Intent(SignInActivity.this, MenuActivity.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                progressIndicator.setVisibility(View.GONE);
+                                showError();
                             }
                         }
                     });
                 } else {
-
+                    progressIndicator.setVisibility(View.GONE);
+                    showError();
                 }
             }
         });
@@ -87,5 +100,9 @@ public class SignInActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+
+    private void showError() {
+        Toast.makeText(SignInActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
     }
 }

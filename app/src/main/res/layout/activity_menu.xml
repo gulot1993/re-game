@@ -68,17 +68,31 @@
         android:fontFamily="sans-serif-black"
         android:text="VIDEO"
         android:background="@drawable/customborder_line" />
+
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/leaderboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/leaderboard"
         android:layout_below="@id/video"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:background="@drawable/customborder_line"
         android:fontFamily="sans-serif-black"
         android:text="LEADERBOARD"
-        android:background="@drawable/customborder_line" />
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/leaderboard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/customborder_line"
+        android:fontFamily="sans-serif-black"
+        android:text="LOGOUT"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 </RelativeLayout>
