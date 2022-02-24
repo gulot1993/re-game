@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "850007600091",
-    "project_id": "re-game",
-    "storage_bucket": "re-game.appspot.com"
+    "project_number": "961694397152",
+    "project_id": "regameandroid",
+    "storage_bucket": "regameandroid.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:850007600091:android:5891f057b3d9d5834755fe",
+        "mobilesdk_app_id": "1:961694397152:android:3ef1b4e61c554809ce1685",
         "android_client_info": {
-          "package_name": "com.regame.org"
+          "package_name": "com.project.demo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "850007600091-teegacfu0hac5msaracaggslbojusb7r.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.regame.org",
-            "certificate_hash": "6c6f2f91d75c1f5fafc1d168d187531a134d7b26"
-          }
-        },
-        {
-          "client_id": "850007600091-bcm9nj9afsg7qrr4vhdbqf3755gnaau9.apps.googleusercontent.com",
+          "client_id": "961694397152-h2uiimd98s5i57v7gsi2jqkknme4lqfo.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAQFeGJQMHbi336driw8LPr403FHTTuxN4"
+          "current_key": "AIzaSyAYVa2B6-XH232diyvEcXHHUjDXOqqfXfg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "850007600091-bcm9nj9afsg7qrr4vhdbqf3755gnaau9.apps.googleusercontent.com",
+              "client_id": "961694397152-h2uiimd98s5i57v7gsi2jqkknme4lqfo.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
